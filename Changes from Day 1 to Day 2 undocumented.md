@@ -12,7 +12,7 @@ Unsolved undocumented changes:
 Hierarchy: EventSystem
 
 Hierarchy/EventSystem: Drag Threshold: 5 (instead of 10)
-### Scripts/MonoBehavious/Player/PlayerMovement
+### Scripts/MonoBehaviour/Player/PlayerMovement
 ```csharp
 public const string startingPositionKey = "starting position";
 public SaveData playerSaveData;
@@ -33,7 +33,7 @@ Player Movement (Script): Add PlayerSaveData to Player Save Data field
 ## Remove:
 Scenes/SecurityRoom: EventSystem (This is moved to Persistent scene)
 
-Scripts/MonoBehavious/Inventory/Inventory
+Scripts/MonoBehaviour/Inventory/Inventory
 
 Editor/Interaction/Inventory/InventoryEditor
 

@@ -2066,8 +2066,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323726814277112}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.7, y: 0, z: 3.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.369, y: 0, z: 2.447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4851481710549678}
@@ -2075,7 +2075,7 @@ Transform:
   - {fileID: 4047800036801252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4794163764932810
 Transform:
   m_ObjectHideFlags: 1
@@ -2307,6 +2307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95573566344864678}
   agent: {fileID: 195812993715138290}
+  playerSaveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
   inputHoldDelay: 0.5
   turnSpeedThreshold: 0.5
   speedDampTime: 0.1

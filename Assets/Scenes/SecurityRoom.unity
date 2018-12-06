@@ -293,76 +293,6 @@ MonoBehaviour:
   audioSource: {fileID: 905901658}
   audioClip: {fileID: 8300000, guid: 707d533b18a364142897701cc3b4027e, type: 3}
   delay: 0
---- !u!1 &181305250
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 181305254}
-  - component: {fileID: 181305253}
-  - component: {fileID: 181305252}
-  - component: {fileID: 181305251}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &181305251
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 181305250}
-  m_Enabled: 1
---- !u!114 &181305252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 181305250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &181305253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 181305250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &181305254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 181305250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &227469776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,10 +508,10 @@ Prefab:
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1857171842}
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OnInteracableClick
       objectReference: {fileID: 0}
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2115,10 +2045,11 @@ Prefab:
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 114638534720478296, guid: 3c375605b22bc834aaaebb00d67857b7,
+        type: 2}
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OnInteracableClick
       objectReference: {fileID: 0}
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2341,8 +2272,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4788767196968212, guid: 3c375605b22bc834aaaebb00d67857b7, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114638534720478296, guid: 3c375605b22bc834aaaebb00d67857b7,
+        type: 2}
+      propertyPath: playerSaveData
+      value: 
+      objectReference: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c375605b22bc834aaaebb00d67857b7, type: 2}
   m_IsPrefabAsset: 0

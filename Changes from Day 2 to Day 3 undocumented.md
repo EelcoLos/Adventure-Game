@@ -9,3 +9,17 @@ If you want to follow the Adventure game tutorial as a full front to back, start
 ## Remove:
 
 ## Change:
+
+Scripts/ScriptableObjects/Interaction/Conditions/ConditionCollection: Only leave the method, which returns a default return true, so:
+
+```csharp
+using UnityEngine;
+
+public class ConditionCollection : ScriptableObject
+{
+    public bool CheckAndReact()
+    {
+        return true;
+    }
+}
+```

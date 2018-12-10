@@ -4,9 +4,9 @@ If you want to follow the Adventure game tutorial as a full front to back, start
 
 **Note: Prefabs to save it!** If you want to save it all around the project, don't forget to save these changes to the **Prefab**.
 
-## Add:
-
 ## Remove:
+
+SecurityRoom/LaserGrindInteractable: The Laseroff Interaction Collection
 
 ## Change:
 Scripts/Editor/Interaction/Conditions/ConditionCollectionEditor:

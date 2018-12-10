@@ -9,6 +9,11 @@ If you want to follow the Adventure game tutorial as a full front to back, start
 ## Remove:
 
 ## Change:
+Scripts/Editor/Interaction/Conditions/ConditionCollectionEditor:
+* Remove CustomEditor above the class
+* OnEnable: Remove the _CheckAndCreateSubEditors_ call at the end of the method
+* OnInspectorGui Method should be blank
+* CreateConditionCollection: Only the newConditionCollection creation & return should stay
 
 Scripts/ScriptableObjects/Interaction/Conditions/ConditionCollection: Only leave the method, which returns a default return true, so:
 
@@ -23,3 +28,4 @@ public class ConditionCollection : ScriptableObject
     }
 }
 ```
+

@@ -7,6 +7,4 @@ If you want to follow the Adventure game tutorial as a full front to back, start
 ## Remove:
 Scripts/ScriptableObjects/Interaction/Reactions/ImmediateReactions/TextReaction.cs
 Scripts/Editor/Interaction/ReactionEditors/TextReactionEditor.cs
-
-## Change:
-
+SecurityRoom/PictureInteractable/DefaultReaction: Remove Text Reaction

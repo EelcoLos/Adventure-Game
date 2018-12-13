@@ -34,7 +34,7 @@ public class ConditionCollectionEditor : EditorWithSubEditors<ConditionEditor, C
         conditionsProperty = serializedObject.FindProperty(conditionCollectionPropRequiredConditionsName);
         reactionCollectionProperty = serializedObject.FindProperty(conditionCollectionPropReactionCollectionName);
 
-        CheckAndCreateSubEditors (conditionCollection.requiredConditions);
+        CheckAndCreateSubEditors(conditionCollection.requiredConditions);
     }
 
 
@@ -53,10 +53,9 @@ public class ConditionCollectionEditor : EditorWithSubEditors<ConditionEditor, C
 
     public override void OnInspectorGUI ()
     {
-        serializedObject.Update ();
-
+        serializedObject.Update();
         CheckAndCreateSubEditors(conditionCollection.requiredConditions);
-        
+
         EditorGUILayout.BeginVertical(GUI.skin.box);
         EditorGUI.indentLevel++;
 
@@ -64,18 +63,18 @@ public class ConditionCollectionEditor : EditorWithSubEditors<ConditionEditor, C
 
         descriptionProperty.isExpanded = EditorGUILayout.Foldout(descriptionProperty.isExpanded, descriptionProperty.stringValue);
 
-        if (GUILayout.Button("Remove Collection", GUILayout.Width(collectionButtonWidth)))
+        if(GUILayout.Button("Remove Collection", GUILayout.Width(collectionButtonWidth)))
         {
-            collectionsProperty.RemoveFromObjectArray (conditionCollection);
+            collectionsProperty.RemoveFromObjectArray(conditionCollection);
         }
-
-        EditorGUILayout.EndHorizontal();
         
+        EditorGUILayout.EndHorizontal();
+
         if (descriptionProperty.isExpanded)
         {
-            ExpandedGUI ();
+            ExpandedGUI();
         }
-        
+
         EditorGUI.indentLevel--;
         EditorGUILayout.EndVertical();
 
@@ -124,7 +123,7 @@ public class ConditionCollectionEditor : EditorWithSubEditors<ConditionEditor, C
     public static ConditionCollection CreateConditionCollection()
     {
         ConditionCollection newConditionCollection = CreateInstance<ConditionCollection>();
-        newConditionCollection.description = "New condition collection";
+        newConditionCollection.description = "New Condition Collection";
         newConditionCollection.requiredConditions = new Condition[1];
         newConditionCollection.requiredConditions[0] = ConditionEditor.CreateCondition();
         return newConditionCollection;

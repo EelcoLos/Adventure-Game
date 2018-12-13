@@ -46,3 +46,20 @@ public class SceneController : MonoBehaviour
     }
 }
 ```
+
+/Scripts/ScriptableObjects/DataPersistence/SaveData:
+
+Clear the TrySetValue and TryGetValue methods, as shown below
+
+```csharp
+        public void TrySetValue (string key, T value)
+        {
+
+        }
+
+
+        public bool TryGetValue (string key, ref T value)
+        {
+            return false;
+        }
+```

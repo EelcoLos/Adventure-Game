@@ -160,11 +160,10 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
             Type scriptType = script.GetClass ();
 
             var scriptNotReactionType = !scriptType.IsSubclassOf(typeof(Reaction));
-            if (scriptNotReactionType)
+            if (scriptNotReactionType || scriptType.IsAbstract)
+            {
                 return false;
-
-            if (scriptType.IsAbstract)
-                return false;
+            }
         }
 
         return true;

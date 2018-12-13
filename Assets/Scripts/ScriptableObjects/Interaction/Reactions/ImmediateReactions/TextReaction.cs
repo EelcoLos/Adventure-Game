@@ -1,23 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class TextReaction : Reaction
 {
-    public string message;
-    public Color textColor = Color.white;
-    public float delay;
+	public string message;
+	public Color textColor = Color.white;
+	public float delay;
 
+	private TextManager textManager;
 
-    private TextManager textManager;
-
-
-    protected override void SpecificInit()
-    {
-        textManager = FindObjectOfType<TextManager> ();
-    }
-
+	protected override void SpecificInit()
+	{
+		textManager = FindObjectOfType<TextManager>();
+	}
 
     protected override void ImmediateReaction()
     {
-        textManager.DisplayMessage (message, textColor, delay);
+        textManager.DisplayMessage(message, textColor, delay);
     }
 }

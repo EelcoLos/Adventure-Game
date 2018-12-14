@@ -46,15 +46,15 @@ test-playmode:
 #   only:
 #     - master
 
-build-StandaloneLinux64:
-  <<: *build
-  variables:
-    BUILD_TARGET: StandaloneLinux64
+# build-StandaloneLinux64:
+#   <<: *build
+#   variables:
+#     BUILD_TARGET: StandaloneLinux64
 
-build-StandaloneOSX:
-  <<: *build
-  variables:
-    BUILD_TARGET: StandaloneOSX
+# build-StandaloneOSX:
+#   <<: *build
+#   variables:
+#     BUILD_TARGET: StandaloneOSX
 
 #Note: build target names changed in recent versions, use this for versions < 2017.2:
 # build-StandaloneOSXUniversal:
@@ -67,19 +67,19 @@ build-StandaloneWindows64:
   variables:
     BUILD_TARGET: StandaloneWindows64
 
-build-WebGL:
-  <<: *build
-  variables:
-    BUILD_TARGET: WebGL
+# build-WebGL:
+#   <<: *build
+#   variables:
+#     BUILD_TARGET: WebGL
 
-pages:
-  image: alpine:latest
-  stage: deploy
-  script:
-  - mv ./Builds/WebGL public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+# pages:
+#   image: alpine:latest
+#   stage: deploy
+#   script:
+#   - mv ./Builds/WebGL public
+#   artifacts:
+#     paths:
+#     - public
+#   only:
+#   - master
 

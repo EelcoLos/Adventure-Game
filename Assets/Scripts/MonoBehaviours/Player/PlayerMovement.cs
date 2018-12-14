@@ -12,17 +12,20 @@ public class PlayerMovement : MonoBehaviour
 	private bool handleInput = true;
 	private const float stopDistanceProportion = 0.1f;
 	private const float navMeshSampleDistance = 4f;
+	public const string startingPositionKey = "starting position";
 	private readonly int hashSpeedPara = Animator.StringToHash("Speed");
 	private readonly int hashLocomotionTag = Animator.StringToHash("Locomotion");
 	
 	public Animator animator;
 	public NavMeshAgent agent;
+	public SaveData playerSaveData;
 	public float inputHoldDelay = 0.5f;
     public float turnSpeedThreshold = 0.5f;
 	[Tooltip("Amount of time speed is change to its value")]
 	public float speedDampTime = 0.1f;
     private float slowingSpeed = 0.175f;
     private float turnSmoothing = 15f;
+    
 
 
 
@@ -34,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
 	{
 		agent.updateRotation = false;
 		inputHoldWait = new WaitForSeconds(inputHoldDelay);
+
+		string startingPositionName = "";
+        playerSaveData.Load(startingPositionKey, ref startingPositionName);
+        Transform startingPosition = StartingPosition.FindStartingPosition(startingPositionName);
+
+        transform.position = startingPosition.position;
+        transform.rotation = startingPosition.rotation;
 
 		destinationPosition = transform.position;
 	}

@@ -6,7 +6,7 @@ stages:
 - deploy
 
 variables:
-  BUILD_NAME: ExampleProjectName
+  BUILD_NAME: UniteTrainingDayPhase1
 
 .unity_before_script: &unity_before_script
   before_script:

@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Assets",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Editor",
+    "\\Assets\\Scripts\\Editor\\Extensions",
+    "\\Assets\\Scripts\\Editor\\Interaction",
+    "\\Assets\\Scripts\\Editor\\Interaction\\ReactionEditors",
+    "\\Assets\\Scripts\\Editor\\Inventory",
     "\\Packages"
   ],
-  "SelectedNode": "\\Packages",
+  "SelectedNode": "\\Assets\\Scripts\\Editor\\Interaction\\ReactionEditors\\TextReactionEditor.cs",
   "PreviewInSolutionExplorer": false
 }

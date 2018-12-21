@@ -12,9 +12,9 @@ public class TextReactionEditor : ReactionEditor
 	private const string textReactionPropTextColor = "textColor";
 	private const string textReactionPropDelayName = "delay";
 	private const float areaWithOffset = 19f;
-    private const float messageGUILines = 3f;
+	private const float messageGUILines = 3f;
 
-    protected override void Init()
+	protected override void Init()
 	{
 		messageProperty = serializedObject.FindProperty(textReactionPropMessageName);
 		textColorProperty = serializedObject.FindProperty(textReactionPropTextColor);
@@ -33,8 +33,8 @@ public class TextReactionEditor : ReactionEditor
 		EditorGUILayout.PropertyField(delayProperty);
 	}
 
-    protected override string GetFoldoutLabel()
-    {
-        return "Text Reaction";
-    }
+	protected override string GetFoldoutLabel()
+	{
+		return "Text Reaction";
+	}
 }

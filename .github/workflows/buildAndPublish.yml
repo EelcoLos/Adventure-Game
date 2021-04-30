@@ -17,13 +17,13 @@ jobs:
           lfs: true
 
       # Cache
-      - uses: actions/cache@v2
-        with:
-          path: |
-            Library
-            !Library/EditorUserBuildSettings.asset
-            !Library/ScriptAssemblies/
-          key: Library
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       Library
+      #       !Library/EditorUserBuildSettings.asset
+      #       !Library/ScriptAssemblies/
+      #     key: Library
           
       # Build
       - name: Build project

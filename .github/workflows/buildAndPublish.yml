@@ -19,7 +19,10 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: Library
+          path: |
+            Library
+            !Library/EditorUserBuildSettings.asset
+            !Library/ScriptAssemblies/
           key: Library
           
       # Build

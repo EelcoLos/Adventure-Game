@@ -1,0 +1,53 @@
+name: Actions 😎
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build my project ✨
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library
+          
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+
+      # Output
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
+  publish:
+    name: Publish my Project to Itch🎁🎉
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: Build
+          path: build
+      - name: Itch.io - Publish
+        uses: KikimoraGames/itch-publish@v0.0.1
+        env:
+          butlerApiKey: ${{ secrets.ITCH_BUTLER_API }}
+          gameData: build
+          itchUsername: eelcolos
+          itchGameId: eelcolos/adventuregame
+          buildChannel: html

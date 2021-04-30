@@ -41,7 +41,8 @@ jobs:
       - name: Itch.io - Publish
         uses: KikimoraGames/itch-publish@v0.0.1
         env:
-          butlerApiKey: ${{ secrets.ITCH_BUTLER_API }}
+          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
           gameData: build
           itchUsername: eelcolos
           itchGameId: eelcolos/adventuregame

@@ -13,23 +13,6 @@ jobs:
         with:
           lfs: true
 
-      # Cache
-      - uses: actions/cache@v2
-        with:
-          path: |
-            Library
-            !Library/EditorUserBuildSettings.asset
-            !Library/ScriptAssemblies/
-          key: Library
-
-      # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2
@@ -38,8 +21,10 @@ jobs:
         with:
           targetPlatform: WebGL
 
-      # Output
-      - uses: actions/upload-artifact@v2
+      # Test
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          name: Build
-          path: build
+          githubToken: ${{ secrets.GITHUB_TOKEN }}

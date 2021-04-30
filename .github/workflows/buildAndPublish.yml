@@ -15,15 +15,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           lfs: true
-
-      # Cache
-      - uses: actions/cache@v2
-        with:
-          path: |
-            Library
-            !Library/EditorUserBuildSettings.asset
-            !Library/ScriptAssemblies/
-          key: Library
           
       # Build
       - name: Build project

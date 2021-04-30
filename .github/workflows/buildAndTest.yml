@@ -1,10 +1,10 @@
-name: Actions 😎
+name: Unity Test & Build Action😎
 
 on: [pull_request]
 
 jobs:
   build:
-    name: Build my project ✨
+    name: Test🔍 & Build my project ✨
     runs-on: ubuntu-latest
     steps:
       # Checkout
@@ -18,11 +18,15 @@ jobs:
         with:
           path: Library
           key: Library
+
       # Test
       - name: Run tests
         uses: game-ci/unity-test-runner@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2
@@ -30,3 +34,9 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: WebGL
+
+      # Output
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build

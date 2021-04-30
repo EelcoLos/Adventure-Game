@@ -1,4 +1,4 @@
-name: Actions 😎
+name: Unity Build & Publish 😎
 
 on:
   push:

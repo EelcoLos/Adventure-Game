@@ -31,6 +31,16 @@ jobs:
         uses: colpal/actions-clean@v1
         if: ${{ always() }} # To ensure this step runs even when earlier steps fail
 
+      - name: Checkout repository again
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2

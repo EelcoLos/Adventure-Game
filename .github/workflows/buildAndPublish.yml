@@ -33,6 +33,7 @@ jobs:
           name: Build
           path: build
       - name: Releases Action
+        continue-on-error: true
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build"        

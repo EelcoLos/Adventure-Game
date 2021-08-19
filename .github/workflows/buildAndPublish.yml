@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+    - '*'
 
 jobs:
   build:
@@ -25,10 +27,17 @@ jobs:
           targetPlatform: WebGL
 
       # Output
-      - uses: actions/upload-artifact@v2
+      - name: Upload Artifact 
+        uses: actions/upload-artifact@v2
         with:
           name: Build
           path: build
+      - name: Releases Action
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build"        
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
   publish:
     name: Publish my Project to Itch🎁🎉
     needs: build
